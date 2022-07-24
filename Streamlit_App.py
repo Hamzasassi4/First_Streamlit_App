@@ -24,7 +24,11 @@ fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon"
 #streamlit.text(fruityvice_response)
 
 # New  section to  sisplay Fuityvice API response
-streamlit.header('FruityVice Advice')
+streamlit.header('FruityVice Fruit Advice')
+
+fruit_choice = streamlit.text_input('What fruit would you like information about?','Kiwi')
+
+
 
 import requests
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
