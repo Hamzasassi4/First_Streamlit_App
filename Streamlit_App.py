@@ -85,17 +85,5 @@ def insert_row_snowflake (new_fruit):
     return "Thanks for adding" + new_fruit
   
 
-try:
-  fruit_choice_add= streamlit.text_input('What fruit would you like to ADD ?')
-  if not fruit_choice_add:
-    streamlit.error("Please add a Fruit name.")
-  else:
-    back_from_function = insert_row_snowflake(fruit_choice_add)
-    # Print the  output  as a frame (table)
-    streamlit.dataframe(back_from_function)
-    #streamlit.text(fruityvice_response.json()) # Write data to the screen
-except URLError as e:
-  streamlit.error()
-  
 
 my_cnx.close()
