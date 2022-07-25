@@ -24,11 +24,8 @@ fruits_to_show = my_fruit_list.loc[fruits_selected]
 # Display the table on the page.
 streamlit.dataframe(fruits_to_show)
 
-
-
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
 streamlit.text(fruityvice_response)
-
 
 # Create  the repeatable code block ( called a  function)
 def get_fruityvice_data(this_fruit_choice):
@@ -57,15 +54,18 @@ except URLError as e :
 streamlit.write('The user entered ', fruit_choice)
 streamlit.stop()
 
-
+# --------------------------------------------------------------
 streamlit.header(" The  Fruit Load List Contains : ")
+
 # Snowflake related Function
 def get_fruit_load_list():
   # import snowflake.connector
   with my_cnx.cursor() as my_cur :
     my_cur.execute("SELECT * from fruit_load_list")
     return my_cur.fetchall()
-  # Add a Button to load the  Fruits
+  
+  
+# Add a Button to load the  Fruits
 if streamlit.button('Get Fruit Load List'):
   my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
   my_data_rows = get_fruit_load_list()
