@@ -46,8 +46,8 @@ try:
     # Print the  output  as a frame (table)
     streamlit.dataframe(fruityvice_normalized)
     
-except urlerror as e :
-    streamlit.error()
+except URLError as e :
+  streamlit.error()
     
     
 streamlit.write('The user entered ', fruit_choice)
