@@ -47,8 +47,7 @@ try:
     #streamlit.text(fruityvice_response.json()) # Write data to the screen
 except URLError as e:
   streamlit.error()
-  
-streamlit.write('The user entered ', fruit_choice)
+ 
 streamlit.stop()
 
 # --------------------------------------------------------------
