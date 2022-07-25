@@ -48,7 +48,7 @@ try:
     
     back_from_function = get_fruityvice_data(fruit_choice)
     # Print the  output  as a frame (table)
-    streamlit.dataframe(fruityvice_normalized)
+    streamlit.dataframe(back_from_function)
     #streamlit.text(fruityvice_response.json()) # Write data to the screen
 except URLError as e :
   streamlit.error()
